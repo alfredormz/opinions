@@ -25,3 +25,18 @@ To create the `results.json` file
 rake opinions:dump
 ```
 
+## Run the server
+
+```
+cd opinions
+rails server
+```
+Then go to `http://localhost:3000/opinions.json` on your browser. You can also pass the year and month as parameters.
+
+Examples:
+
+```
+http://local.dev:3000/opinions.json?year=2015 #current month of 2015
+http://local.dev:3000/opinions.json?year=2014&month=5 #May 2015
+
+```
