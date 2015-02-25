@@ -4,7 +4,8 @@ class OpinionsController < ApplicationController
     @year = params[:year] || Date.today.year
     @month = params[:month] || Date.today.month
 
-    @opinions = SiteParser.call(@year, @month)
+    @opinions = OpinionCollection.new(@year, @month).to_a
+
     respond_to do |format|
       format.json { render text: @opinions.to_json }
     end
