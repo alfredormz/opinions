@@ -1,0 +1,22 @@
+<h1>Opinions - U.S. Court of Appeals for the D.C. Circuit</h1>
+<div>
+  <h3>Period: <%= @month %>, <%= @year %> </h3>
+  <% if @opinions.any? %>
+    <table>
+      <tr>
+        <th>Number</th>
+        <th>Date</th>
+        <th>Title</th>
+      </tr>
+      <% @opinions.each do |opinion| %>
+        <tr>
+          <td><%= opinion[:opinion_number] %></td>
+          <td><%= opinion[:date] %></td>
+          <td><%= opinion[:title] %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <h2>No Opinions were released on this period</h2>
+  <% end %>
+</div>
